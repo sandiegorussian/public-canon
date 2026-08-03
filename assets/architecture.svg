@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 980" role="img"
+     aria-labelledby="archtitle archdesc" font-family="-apple-system, Helvetica Neue, Arial, sans-serif">
+  <title id="archtitle">Two-layer workflow: external platform-mediated acquisition, and the local governed core</title>
+  <desc id="archdesc">A vertical schematic in two stacked bands. The upper external layer flows downward: historical identifiers; an opaque-label temporary phonebook; a dedicated Google Contacts account; device synchronization; Telegram ordinary contact matching; profiles visible under platform and privacy settings; and the human review interface. The human review interface connects down into the lower local governed core, which flows downward: credential-limited adapter; loopback-only local API; PostgreSQL storing encrypted identifying values; append-oriented observations and corrections. Annotations state that phone numbers were disclosed while opaque labels withheld names and relationship context; that platform matching shaped which evidence became visible, with no custom lookup client, scraping, messaging, or automated identity conclusion; that human observations and dispositions were recorded locally; and that local teardown cannot establish provider deletion or reverse discovery effects.</desc>
+
+  <style>
+    .band { fill: none; stroke: #c8c3b8; stroke-width: 1.2; stroke-dasharray: 5 4; }
+    .bandlabel { font-size: 15px; font-weight: 600; letter-spacing: 0.04em; fill: #6b7178; }
+    .node { fill: #ffffff; stroke: #7d8790; stroke-width: 1.4; }
+    .node.core { fill: #eef2f4; stroke: #2f4858; }
+    .ntext { font-size: 15px; fill: #1c1f23; }
+    .arrow { stroke: #7d8790; stroke-width: 1.6; fill: none; marker-end: url(#ah); }
+    .link { stroke: #2f4858; stroke-width: 1.6; fill: none; stroke-dasharray: 6 3; marker-end: url(#ah2); }
+    .note { font-size: 12.5px; fill: #5c636b; }
+    .notekey { font-weight: 700; fill: #6b5518; }
+  </style>
+
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7d8790"/>
+    </marker>
+    <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2f4858"/>
+    </marker>
+  </defs>
+
+  <rect class="band" x="12" y="30" width="376" height="378" rx="8"/>
+  <text class="bandlabel" x="26" y="52">External layer &#8212; platform-mediated acquisition</text>
+
+  <g>
+    <rect class="node" x="50" y="66"  width="300" height="34" rx="6"/><text class="ntext" x="200" y="88" text-anchor="middle">Historical identifiers</text>
+    <rect class="node" x="50" y="116" width="300" height="34" rx="6"/><text class="ntext" x="200" y="138" text-anchor="middle">Opaque-label temporary phonebook</text>
+    <rect class="node" x="50" y="166" width="300" height="34" rx="6"/><text class="ntext" x="200" y="188" text-anchor="middle">Dedicated Google Contacts account</text>
+    <rect class="node" x="50" y="216" width="300" height="34" rx="6"/><text class="ntext" x="200" y="238" text-anchor="middle">Device synchronization</text>
+    <rect class="node" x="50" y="266" width="300" height="34" rx="6"/><text class="ntext" x="200" y="288" text-anchor="middle">Telegram ordinary contact matching</text>
+    <rect class="node" x="50" y="316" width="300" height="34" rx="6"/><text class="ntext" x="200" y="338" text-anchor="middle">Profiles visible under privacy settings</text>
+    <rect class="node" x="50" y="366" width="300" height="34" rx="6"/><text class="ntext" x="200" y="388" text-anchor="middle">Human review interface</text>
+    <path class="arrow" d="M200,100 L200,116"/>
+    <path class="arrow" d="M200,150 L200,166"/>
+    <path class="arrow" d="M200,200 L200,216"/>
+    <path class="arrow" d="M200,250 L200,266"/>
+    <path class="arrow" d="M200,300 L200,316"/>
+    <path class="arrow" d="M200,350 L200,366"/>
+  </g>
+
+  <path class="link" d="M200,400 L200,470"/>
+  <text class="note" x="200" y="430" text-anchor="middle">Human observations and</text>
+  <text class="note" x="200" y="446" text-anchor="middle">dispositions recorded locally</text>
+
+  <rect class="band" x="12" y="474" width="376" height="228" rx="8" stroke="#2f4858"/>
+  <text class="bandlabel" x="26" y="496" fill="#2f4858">Local governed core &#8212; loopback-only</text>
+
+  <g>
+    <rect class="node core" x="50" y="510" width="300" height="34" rx="6"/><text class="ntext" x="200" y="532" text-anchor="middle">Credential-limited adapter</text>
+    <rect class="node core" x="50" y="560" width="300" height="34" rx="6"/><text class="ntext" x="200" y="582" text-anchor="middle">Loopback-only local API</text>
+    <rect class="node core" x="50" y="610" width="300" height="34" rx="6"/><text class="ntext" x="200" y="628" text-anchor="middle">PostgreSQL: encrypted identifying values</text>
+    <rect class="node core" x="50" y="660" width="300" height="34" rx="6"/><text class="ntext" x="200" y="682" text-anchor="middle">Append-oriented observations &amp; corrections</text>
+    <path class="arrow" d="M200,544 L200,560"/>
+    <path class="arrow" d="M200,594 L200,610"/>
+    <path class="arrow" d="M200,644 L200,660"/>
+  </g>
+
+  <g>
+    <text class="note" x="14" y="734"><tspan class="notekey">&#8226; </tspan>Phone numbers were disclosed; opaque labels withheld</text>
+    <text class="note" x="26" y="750">names and relationship context.</text>
+    <text class="note" x="14" y="778"><tspan class="notekey">&#8226; </tspan>Platform matching shaped which evidence became visible.</text>
+    <text class="note" x="26" y="794">No custom lookup client, scraping, messaging, or</text>
+    <text class="note" x="26" y="810">automated identity conclusion.</text>
+    <text class="note" x="14" y="838"><tspan class="notekey">&#8226; </tspan>Local teardown cannot establish provider deletion or</text>
+    <text class="note" x="26" y="854">reverse discovery effects.</text>
+  </g>
+</svg>

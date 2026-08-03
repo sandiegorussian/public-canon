@@ -1,0 +1,20 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*~
+.*.swp
+.vscode/
+.idea/
+
+# local preview / build artifacts (never committed)
+*.log
+.cache/
+dist/
+node_modules/
+
+# release artifacts generated later, not tracked from source
+documents/*.pdf
+
+# never allow local server logs or temp captures
+*.tmp
+screenshots/

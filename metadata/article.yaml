@@ -1,0 +1,26 @@
+# Article metadata — proposal only. No publication date exists yet.
+title: "The Human-Review Band Is the Product"
+subtitle: "A purpose-bounded, human-adjudicated review of a decade-old contact archive."
+author: "Denis Lavrinenko"
+document_class: "Case study (practice-based, single-operator)"
+version: "v1.0 (draft)"
+publication_status: "Draft · Not published"
+# Paths are site-relative; the base (project path or custom-domain root) is resolved at release.
+canonical_path: "case-studies/human-review-band/"
+pdf_path: "documents/the-human-review-band-is-the-product.pdf"   # generated at release only
+description: >
+  A case study of a purpose-bounded review of a decade-old contact archive:
+  platform-mediated matching, human-entered dispositions, append-oriented
+  records, two operational defect passes, and a function-allocation research
+  question.
+social_preview_text: >
+  A single-operator case study of a purpose-bounded review of a decade-old
+  contact archive — platform-mediated matching, human-entered dispositions,
+  append-oriented records, and which functions of such a review were allocated
+  to software, third parties, or a named human.
+publication_date: null            # set only at the release gate
+canonical_live_url: null          # not assigned yet
+open_graph_production_url: null    # withheld until launch
+robots: "noindex, nofollow"
+analytics: "none"
+license: "All rights reserved. See COPYRIGHT.md."

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Not found — Denis Lavrinenko</title>
+<meta name="robots" content="noindex, nofollow" />
+<!-- Self-contained: styles are inlined so this page renders correctly at any
+     base path (local root, the /public-canon/ project path, or a custom-domain
+     root) without depending on an external stylesheet. The one home link below
+     targets the project-path base "/public-canon/"; at custom-domain cutover it
+     becomes "/". This is the single base-path-bound value on the site. -->
+<style>
+  :root { --bg:#fdfcfa; --ink:#1c1f23; --muted:#5c636b; --accent:#2f4858;
+          --rule:#d9d5cd; --banner-bg:#f6efdf; --banner-ink:#6b5518; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#15171a; --ink:#e7e4de; --muted:#9aa1a9; --accent:#a3bccb;
+            --rule:#33383d; --banner-bg:#2a2417; --banner-ink:#d8bf7f; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font-family: Charter, Georgia, Cambria, "Times New Roman", serif; line-height:1.6; }
+  .draft-banner { background:var(--banner-bg); color:var(--banner-ink); text-align:center;
+    font-family:-apple-system,"Helvetica Neue",Arial,sans-serif; font-size:0.8rem;
+    letter-spacing:0.08em; text-transform:uppercase; padding:0.45rem 1rem; border-bottom:1px solid var(--rule); }
+  main { max-width:46rem; margin:0 auto; padding:2.5rem 1.25rem 4rem; }
+  h1 { font-size:1.6rem; margin:1rem 0 0.6rem; }
+  p { font-size:1.05rem; color:var(--ink); }
+  a { color:var(--accent); }
+  a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+  footer { max-width:46rem; margin:0 auto; padding:1.2rem 1.25rem 2.5rem; border-top:1px solid var(--rule);
+    font-family:-apple-system,"Helvetica Neue",Arial,sans-serif; font-size:0.8rem; color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="draft-banner" role="note">Draft · Not published — rendering prototype for internal review</div>
+<main>
+  <h1>Page not found</h1>
+  <p>That page does not exist. Return to the <a href="/public-canon/">home page</a>.</p>
+</main>
+<footer>
+  <p>Status: Draft · Not published.</p>
+</footer>
+</body>
+</html>
