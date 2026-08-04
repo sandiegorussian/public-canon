@@ -54,4 +54,4 @@ See `COPYRIGHT.md`. The site code and the article/diagram are all rights reserve
 
 ## Contact
 
-Contact is via LinkedIn. No public email is provided.
+Contact is via [LinkedIn](https://www.linkedin.com/in/sandiegorussian/). No public email is provided.
