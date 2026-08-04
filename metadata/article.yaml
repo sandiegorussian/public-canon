@@ -1,13 +1,14 @@
-# Article metadata — proposal only. No publication date exists yet.
+# Article metadata — published project-site release.
 title: "The Human-Review Band Is the Product"
 subtitle: "A purpose-bounded, human-adjudicated review of a decade-old contact archive."
 author: "Denis Lavrinenko"
 document_class: "Case study (practice-based, single-operator)"
-version: "v1.0 (draft)"
-publication_status: "Draft · Not published"
-# Paths are site-relative; the base (project path or custom-domain root) is resolved at release.
+version: "v1.0"
+publication_status: "Published"
+# Paths are site-relative; the project-site base is /public-canon/.
+site_base_url: "https://sandiegorussian.github.io/public-canon/"
 canonical_path: "case-studies/human-review-band/"
-pdf_path: "documents/the-human-review-band-is-the-product.pdf"   # generated at release only
+pdf_path: null                     # no downloadable PDF at this release
 description: >
   A case study of a purpose-bounded review of a decade-old contact archive:
   platform-mediated matching, human-entered dispositions, append-oriented
@@ -18,9 +19,9 @@ social_preview_text: >
   contact archive — platform-mediated matching, human-entered dispositions,
   append-oriented records, and which functions of such a review were allocated
   to software, third parties, or a named human.
-publication_date: null            # set only at the release gate
-canonical_live_url: null          # not assigned yet
-open_graph_production_url: null    # withheld until launch
-robots: "noindex, nofollow"
+publication_date: "2026-08-03"
+canonical_live_url: "https://sandiegorussian.github.io/public-canon/case-studies/human-review-band/"
+open_graph_production_url: "https://sandiegorussian.github.io/public-canon/case-studies/human-review-band/"
+robots: "index, follow"
 analytics: "none"
 license: "All rights reserved. See COPYRIGHT.md."

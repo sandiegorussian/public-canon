@@ -3,12 +3,13 @@ title: "The Human-Review Band Is the Product"
 subtitle: "A purpose-bounded, human-adjudicated review of a decade-old contact archive."
 author: "Denis Lavrinenko"
 document_class: "Case study (practice-based, single-operator)"
-version: "v1.0 (draft)"
-status: "Draft · Not published"
+version: "v1.0"
+status: "Published"
 canonical_path: "case-studies/human-review-band/"
 description: "A case study of a purpose-bounded review of a decade-old contact archive: platform-mediated matching, human-entered dispositions, append-oriented records, two operational defect passes, and a function-allocation research question."
 social_preview: "A single-operator case study of a purpose-bounded review of a decade-old contact archive — platform-mediated matching, human-entered dispositions, append-oriented records, and which functions of such a review were allocated to software, third parties, or a named human."
-publication_date: null
+publication_date: "2026-08-03"
+canonical_live_url: "https://sandiegorussian.github.io/public-canon/case-studies/human-review-band/"
 license: "All rights reserved. See COPYRIGHT.md."
 ---
 

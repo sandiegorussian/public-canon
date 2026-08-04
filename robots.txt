@@ -1,3 +1,8 @@
-# Draft — not published. Discourage all indexing until release.
+# Public canon — project-site release.
+# The controlling indexability signal is the page-level <meta name="robots">
+# on each page. Note: a GitHub Pages project site cannot control the account
+# host-root robots file at https://sandiegorussian.github.io/robots.txt, which
+# belongs to the account root and not this repository. This file governs a
+# root or custom-domain deployment of this repository.
 User-agent: *
-Disallow: /
+Allow: /
