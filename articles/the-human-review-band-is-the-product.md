@@ -16,7 +16,7 @@ license: "All rights reserved. See COPYRIGHT.md."
 
 *A purpose-bounded, human-adjudicated review of a decade-old contact archive.*
 
-*Case study · 2026 · v1.0 (draft)*
+*Case study · 2026 · v1.0*
 
 ## 1. The problem
 
