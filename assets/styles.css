@@ -160,6 +160,32 @@ figure.arch figcaption {
   line-height: 1.5;
 }
 
+/* ---------- lead artwork (article hero) ---------- */
+figure.lead-art { margin: 1.5rem 0 2.2rem; }
+figure.lead-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+
+/* ---------- homepage card thumbnail ---------- */
+.canon-list .card-thumb { display: block; margin: 0 0 0.8rem; }
+.canon-list .card-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+
+@media print {
+  figure.lead-art { break-inside: avoid; }
+  figure.lead-art img { max-width: 100%; max-height: 11cm; width: auto; margin: 0 auto; }
+  .canon-list .card-thumb { display: none; }
+}
+
 /* ---------- canon index ---------- */
 .identity h1 { font-size: 1.7rem; margin: 1.6rem 0 0.6rem; line-height: 1.25; }
 .identity p.lede { font-size: 1.05rem; color: var(--ink); }
