@@ -3,8 +3,10 @@ title: "The Human-Review Band Is the Product"
 subtitle: "A purpose-bounded, human-adjudicated review of a decade-old contact archive."
 author: "Denis Lavrinenko"
 document_class: "Case study (practice-based, single-operator)"
-version: "v1.0"
+version: "v1.1"
 status: "Published"
+revision_date: "2026-08-13"
+revision_notes: "Editorial only: limits consolidated into §12 with pointers elsewhere; concrete narrative merged into §3 and moved earlier; stacked qualifications reduced to single canonical statements; function-allocation proposition moved to §2. Section count 17 → 14. No substantive claim, number, calibration, or negative result changed."
 canonical_path: "case-studies/human-review-band/"
 description: "A case study of a purpose-bounded review of a decade-old contact archive: platform-mediated matching, human-entered dispositions, append-oriented records, two operational defect passes, and a function-allocation research question."
 social_preview: "A single-operator case study of a purpose-bounded review of a decade-old contact archive — platform-mediated matching, human-entered dispositions, append-oriented records, and which functions of such a review were allocated to software, third parties, or a named human."
@@ -17,7 +19,7 @@ license: "All rights reserved. See COPYRIGHT.md."
 
 *A purpose-bounded, human-adjudicated review of a decade-old contact archive.*
 
-*Case study · 2026 · v1.0*
+*Case study · 2026 · v1.1*
 
 ## 1. The problem
 
@@ -25,39 +27,39 @@ A personal contact archive, exported in 2017 and largely untouched for years: a 
 
 Nearly a decade of phone-number churn separated the archive from the present. The operator already possessed the identifiers because of earlier relationships and communications. The new purpose was personal archival reconciliation, not outreach. Historic possession, however, did not establish present consent for renewed processing or disclosure to a third party. That distinction became part of the case rather than a problem the architecture could make disappear.
 
-## 2. The conventional approach, and the narrower choice actually made
-
-The most aggressive approaches were rejected: no custom lookup client, contact-enumeration client, scraping workflow, breach dataset, or automated identity conclusion was used. No contact was messaged through the review process. WhatsApp/Meta was considered as a possible second channel but was not used.
-
-The implemented workflow was not free of bulk third-party processing. It used ordinary consumer contact synchronization: approximately seven hundred selected phone identifiers were disclosed in a batch to Google and Telegram so Telegram could perform account matching. The operator then reviewed what became visible. The meaningful boundary was therefore narrower than an earlier account claimed. The system avoided custom enumeration and automated person-resolution, but it did not avoid platform-mediated acquisition and matching.
-
-## 3. The design inversion — and the revised research proposition
+## 2. The research proposition: function allocation, not a human/machine boundary
 
 In classical record linkage, human review is a cost to be minimized: automation handles the bulk and people receive the ambiguous residue. This project inverted that premise deliberately: **here, the human-review band is the product.** Software organized the work, protected the local record, presented available evidence, and preserved corrections. A named human entered the dispositions.
 
-That inversion does not create one clean boundary between “human” and “automated.” It creates a function-allocation problem.
+That inversion does not create one clean boundary between “human” and “automated.” It creates a function-allocation problem — and that problem, not the tooling, is this article’s subject.
 
 > **Research proposition (provisional).** This case examines how the functions of a purpose-bounded review — acquisition, matching, presentation, inference, decision, correction, retention, and destruction — were in fact allocated among a person, local software, and third-party infrastructure, and what would be required to justify any such allocation when the identifiers belong to and affect absent people. It observes an allocation; it does not establish who holds the authority to make one.
 
 The concrete finding is mixed. The human operator entered every identifier observation and disposition, and later the contact-level triage; authority to create an identity candidate or a terminal contact decision was reserved to the human but, in this campaign, never exercised — the record holds zero of each. Meanwhile identifier disclosure, account matching, and evidence availability were partly delegated to third-party infrastructure. In this case, then, “human-adjudicated” means exactly this: a person entered the identifier dispositions and the later triage, and only a person could have created an identity candidate or terminal decision — not that a person independently chose the evidence that reached them. The operator had de facto control over these choices; that is not the same as established authority to disclose, match, retain, or destroy on behalf of the people represented. Human entry of the case’s dispositive records therefore did not settle the ethical status of the full workflow.
 
-This is a proposition generated by one implemented case, not a universal rule. The case directly supports workflow feasibility and traceability. It does not establish accuracy, legitimacy to absent third parties, external accountability, contestability, non-steering, comparative superiority, or transferability.
+This is a proposition generated by one implemented case, not a universal rule. The case directly supports workflow feasibility and traceability; everything it does not support is inventoried once, in §12.
 
-## 4. Acquisition and matching pathway
+## 3. What was actually done
 
-Approximately seven hundred valid phone identifiers were selected from the historical archive. The system generated a temporary phonebook whose labels were opaque: they encoded no real names, relationships, organizations, contact IDs, or phone-number suffixes. That reduced the contextual information disclosed, but it did not hide the phone numbers themselves.
+The most aggressive approaches were rejected: no custom lookup client, contact-enumeration client, scraping workflow, breach dataset, or automated identity conclusion was used. No contact was messaged through the review process. WhatsApp/Meta was considered as a possible second channel but was not used.
 
-The phonebook was imported into a dedicated Google Contacts account and synchronized to the operator’s phone. Ordinary Telegram contact synchronization then matched the uploaded identifiers against Telegram accounts. Telegram and account privacy settings determined which profiles became visible. The operator manually inspected those visible results and recorded observations; the system did not scrape profiles or infer identities automatically.
+The implemented workflow was nonetheless not free of bulk third-party processing, and the meaningful boundary was narrower than an earlier account claimed. It used ordinary consumer contact synchronization: approximately seven hundred selected phone identifiers — the valid numbers among the retained contacts, the ones a matching service could actually use; ambiguous or unusable numbers were excluded — were disclosed in a batch to Google and Telegram so Telegram could perform account matching. The system avoided custom enumeration and automated person-resolution, but it did not avoid platform-mediated acquisition and matching.
+
+The system generated a temporary phonebook whose labels were opaque: they encoded no real names, relationships, organizations, contact IDs, or phone-number suffixes. That reduced the contextual information disclosed, but it did not hide the phone numbers themselves. The phonebook was imported into a dedicated Google Contacts account and synchronized to the operator’s phone. Ordinary Telegram contact synchronization then matched the uploaded identifiers against Telegram accounts. Telegram and account privacy settings determined which profiles became visible. The operator manually inspected those visible results and recorded observations; the system did not scrape profiles or infer identities automatically.
+
+Across multiple working sessions, the roughly seven hundred archived identifiers were all reviewed and dispositioned. This does not mean seven hundred people were identified, located, or contacted. A minority were confidently recognized; a larger share yielded no usable evidence; the remainder occupied bounded intermediate states. “No profile observed” was not treated as proof that a person was unreachable: platform non-use, privacy settings, number churn, synchronization behavior, or account configuration could all produce the same visible result.
+
+The original identifier review was completed. A later combined-card pass also converted some recognized entries into contact-level keep/drop or second-channel triage. The work demonstrated that one operator could complete this workflow and leave a traceable correction record. It did not measure whether the dispositions were correct.
 
 This pathway separated several acts that are easy to blur. The operator’s historic possession of an identifier was not the same as renewed disclosure to Google and Telegram. Platform matching was automated; observation and disposition were human. Absent people received no notice or contestation path. Provider retention, backups, and possible discovery effects were outside the local system’s control and were not proven absent.
 
-## 5. The governed boundary
+## 4. The governed boundary
 
-The working purpose was personal archival reconciliation: deciding, for a long-dormant contact list, which people were still reachable and worth keeping in a maintained working set, and whether a different channel was worth attempting for the rest. The identifiers selected for the review were the valid phone numbers among the retained contacts — the ones a matching service could actually use; ambiguous or unusable numbers were excluded. The intended downstream action was that keep/drop/second-channel triage. The review purpose was fulfilled when the archive had been reviewed once; the local workspace remains scheduled for teardown, after which its bounded operational purpose will be closed. Stating the endpoint matters because acquisition scope is part of purpose limitation. That claimed purpose limited what the operator intended to do; it did not establish consent or legal compliance. Platform privacy settings limited what the operator could see; they did not constitute permission for the renewed processing.
+The working purpose was personal archival reconciliation: deciding, for a long-dormant contact list, which people were still reachable and worth keeping in a maintained working set, and whether a different channel was worth attempting for the rest. The intended downstream action was that keep/drop/second-channel triage. The review purpose was fulfilled when the archive had been reviewed once; the local workspace remains scheduled for teardown, after which its bounded operational purpose will be closed. Stating the endpoint matters because acquisition scope is part of purpose limitation.
 
-Within that unresolved ethical boundary, several constraints were real and mechanically enforced. The review sent no messages. It used no custom lookup, enumeration, or scraping client. Outbound network access from the governed core was restricted, the adapter exposed to the phone held no database credentials, and the record path accepted only the bounded kinds of observation and judgment the system was built to store. These controls constrained conduct. They did not establish entitlement to the identifiers or neutralize the external disclosure.
+Within that still-unresolved ethical boundary, several constraints were real and mechanically enforced. The review sent no messages. It used no custom lookup, enumeration, or scraping client. Outbound network access from the governed core was restricted, the adapter exposed to the phone held no database credentials, and the record path accepted only the bounded kinds of observation and judgment the system was built to store. These controls constrained conduct. What they could not establish — consent, entitlement to the identifiers, or neutralization of the external disclosure — belongs to the limits inventoried in §12.
 
-## 6. External layer and local governed core
+## 5. External layer and local governed core
 
 The overall workflow had two distinct layers.
 
@@ -69,7 +71,7 @@ Contact values in the local database were encrypted at rest using envelope encry
 
 Runtime access was divided among narrowly scoped roles, and the schema owner could not log in. These are concrete privacy-engineering mechanisms, not proof of formally audited security or perfect least privilege. No external security audit or certification occurred.
 
-## 7. What the record actually contains
+## 6. What the record actually contains
 
 The record model distinguished seven things that an earlier draft compressed into one “decision path”: a source or platform observation; an identifier-level disposition; contact-level triage; an identity candidate; a terminal contact decision; a correction or supersession; and derived current state.
 
@@ -79,21 +81,7 @@ When a later observation corrected an earlier one, supersession preserved the ea
 
 The value of this structure was modest but real: the operator could revisit what had been recorded, distinguish a correction from an original observation, and preserve uncertainty instead of forcing every entry into a confident identity claim.
 
-## 8. What happened in use
-
-Across multiple working sessions, approximately seven hundred archived identifiers were reviewed and dispositioned. This does not mean seven hundred people were identified, located, or contacted. A minority were confidently recognized; a larger share yielded no usable evidence; the remainder occupied bounded intermediate states. “No profile observed” was not treated as proof that a person was unreachable: platform non-use, privacy settings, number churn, synchronization behavior, or account configuration could all produce the same visible result.
-
-The original identifier review was completed. A later combined-card pass also converted some recognized entries into contact-level keep/drop or second-channel triage. The work demonstrated that one operator could complete this workflow and leave a traceable correction record. It did not measure whether the dispositions were correct.
-
-## 9. Method and limitations
-
-This is a reflexive single-operator case: the author was the system’s designer, operator, and analyst. The system was built and run first as a working project; its analysis as a case study is retrospective. The evidence for this account is the set of contemporaneous architecture, outcome, defect, and correction records produced during the campaign, together with static source inspection; the author selected and interpreted that corpus, and no independent party audited the selection or coded the Observed / Provisionally inferred / Not established registers below. Some explanations — especially why the original second stage went unused — were interpreted retrospectively and are identified as hypotheses rather than isolated causes. The case has no external ground truth for the dispositions. No second reviewer repeated them, no inter-reviewer reliability was measured, and no independent replication or external security audit occurred. Confidentiality limits prevent publication of the underlying personal records and exact outcome distribution, which also limits independent challenge.
-
-The system’s implementation was developed through directed AI coding assistance. System purpose, ethical constraints, workflow decisions, operational judgments, and acceptance of corrections remained the operator’s responsibility. AI assistance was not independent verification.
-
-The case supports analytic questions and a first-person account of feasibility, traceability, correction, and failure. It does not support population-level generalization, comparative performance claims, or conclusions about accuracy, legality, or affected-person legitimacy.
-
-## 10. Two operational defect passes
+## 7. Two operational defect passes
 
 Operational use produced two distinct sets of documented defects, not one homogeneous list.
 
@@ -103,13 +91,13 @@ The **later combined-card pass** produced nine additional documented defects. Am
 
 The internal records describe discovery, diagnosis, fixes, and regression work across both passes; this case study did not independently reproduce or verify each status, and it does not claim that every one of the eighteen was independently reproduced. The poll-offset defect in particular was a latent replay exposure — the record states it did not produce duplicate verdict rows — rather than an observed corruption. The important result is chronological: the first workflow exposed one class of failures, and the later intervention exposed another.
 
-## 11. Hardening the tests themselves
+## 8. Hardening the tests themselves
 
 An early isolation failure involving synthetic contacts crossed a boundary that the test setup was supposed to maintain. That incident helped motivate a later fail-closed guard.
 
 Before tests could proceed, the guard verified the expected test-environment identities, the test database and key identities, and the absence of the known operational provenance marker. It did not prove that no trace of arbitrary real data could exist under every contamination path. The automated checks and privilege assertions therefore supplied defense-in-depth against the known operational target, not a universal contamination proof.
 
-## 12. The failed stage and the later V1 intervention
+## 9. The failed stage and the later V1 intervention
 
 The original workflow included a second, contact-level decision stage. It went unused. The operator described it at the time as too complicated and semantically unintuitive. A later explanation identified vocabulary and ontology leaking from the data model into the interface: the machinery asked its human to think in categories designed for the database.
 
@@ -119,49 +107,52 @@ The response was not confined to a successor specification. A later V1 combined 
 
 The sequence is therefore: failure, recorded diagnosis, bounded V1 intervention, partial operational improvement, and a remaining research problem. Whether vocabulary, order, choice architecture, or some combination drove the change has not been isolated.
 
-## 13. Lifecycle: built to end, within a bounded scope
+## 10. Lifecycle: built to end, within a bounded scope
 
 The local governed core was built for one campaign and planned retirement. Its runtime identities and key material were purpose-limited, and teardown was designed rather than left as an informal cleanup step.
 
-Destroying the local key can render ciphertext controlled by the local wrapped keyset unreadable. It cannot establish deletion from Google or Telegram, deletion from provider backups, deletion from device or cloud backups, reversal of prior discovery signals, or deletion of plaintext exports outside the encrypted boundary.
+Destroying the local key can render ciphertext controlled by the local wrapped keyset unreadable. It cannot establish deletion from Google or Telegram, deletion from provider backups, deletion from device or cloud backups, reversal of prior discovery signals, or deletion of plaintext exports outside the encrypted boundary. This is the canonical statement of the teardown limit; wherever this article mentions teardown, this is the boundary it means.
 
 At this writing, the campaign is complete and local teardown remains scheduled but not yet performed. Retirement will be claimed only after a separately authorized, fresh read-only lifecycle and teardown-status check establishes the then-current state. Even then, the claim must remain scoped to what the local process can verify.
 
-## 14. The V1 / V2 boundary
+## 11. The V1 / V2 boundary
 
 V1 was implemented, operated, corrected, and later extended with the combined review card. The original contact-level decision stage failed in use; the combined card produced useful triage without producing identity candidates or terminal identity decisions.
 
 V2 is a successor specification. It has no implementation, runtime, schema, routes, or executable tests. Nothing in this article attributes V2’s specified mechanisms to the operated V1 system.
 
-## 15. Research status: what one case does and does not establish
+## 12. Method, limitations, and research status
 
-The inventory has three registers.
+This is a reflexive single-operator case: the author was the system’s designer, operator, and analyst. The system was built and run first as a working project; its analysis as a case study is retrospective. The evidence for this account is the set of contemporaneous architecture, outcome, defect, and correction records produced during the campaign, together with static source inspection; the author selected and interpreted that corpus, and no independent party audited the selection or coded the Observed / Provisionally inferred / Not established registers below. Some explanations — especially why the original second stage went unused — were interpreted retrospectively and are identified as hypotheses rather than isolated causes. The case has no external ground truth for the dispositions. No second reviewer repeated them, no inter-reviewer reliability was measured, and no independent replication or external security audit occurred. Confidentiality limits prevent publication of the underlying personal records and exact outcome distribution, which also limits independent challenge.
+
+The system’s implementation was developed through directed AI coding assistance. System purpose, ethical constraints, workflow decisions, operational judgments, and acceptance of corrections remained the operator’s responsibility. AI assistance was not independent verification.
+
+The case supports analytic questions and a first-person account of feasibility, traceability, correction, and failure. It does not support population-level generalization or comparative performance claims. Beyond that, the inventory has three registers.
 
 **Observed.** One operator completed a purpose-bounded review of approximately seven hundred identifiers. Final dispositions were human-entered. The local record preserved observations, corrections, superseded history, and explicit uncertainty. Two operational passes documented nine defects each. A later V1 combined card produced contact triage while identity-candidate and terminal-decision counts remained zero. Identifier disclosure and account matching depended on Google and Telegram, and an early synthetic-data isolation failure helped motivate a stronger test guard.
 
 **Provisionally inferred.** Function-by-function allocation is a more useful way to analyze this workflow than a single human-versus-automation boundary. Constraint-driven design appears to have produced specific, inspectable mechanisms for local privilege, traceability, and retirement. The failed stage and later combined card suggest that vocabulary, sequence, categories, and perceived benefit can shape whether a human-review workflow is usable. These are hypotheses for comparison, not settled causes or general rules.
 
-**Not established.** The case does not establish accuracy, legal compliance, current consent, legitimacy to absent third parties, external accountability, affected-person contestability, non-steering, general superiority to automated approaches, market validation, multi-reviewer behavior, formal security certification, transferability, or scientific novelty.
+**Not established.** The case does not establish accuracy, legal compliance, current consent, legitimacy to absent third parties, external accountability, affected-person contestability, non-steering, general superiority to automated approaches, market validation, multi-reviewer behavior, formal security certification, transferability, or scientific novelty. In particular: the stated purpose bounded what the operator intended to do, and platform privacy settings bounded what the operator could see — neither established consent for, or the lawfulness of, the renewed processing and disclosure.
 
 The best-supported claims are narrow: feasibility in this one case; traceability; preserved correction history; human-entered final dispositions; documented uncertainty; and operational defect discovery. Even these claims depend on confidential, internally authored records and should not be mistaken for independent validation.
 
-## 16. Possible future partnered research
+## 13. Possible future partnered research
 
 Investigative journalism, human-rights documentation, historical research, archival reconciliation, and humanitarian casework are possible settings for future partnered research because they also involve incomplete human records, consequential uncertainty, and disputed boundaries around evidence. They are possible research contexts only, not demonstrated applications or recommendations for use.
 
 Transfer to any of these settings is unestablished. Higher-stakes work would require domain partners, lawful and ethical authority, stronger threat modeling, affected-person safeguards, and institutional governance. It would also require methods absent here: independent review, defensible ground truth where possible, multi-reviewer comparison, and explicit study of notice and contestation.
 
-## 17. What this case suggests
+## 14. What this case suggests
 
 The inversion still holds, but in a less flattering and more useful form. Every identifier disposition and triage verdict was entered by a human, and no identity candidate or terminal identity decision was produced at all. The evidence available to that human was selected and shaped by third-party matching, privacy settings, software categories, and interface order. Human entry of those records therefore did not make the whole process ethically neutral or non-automated.
 
-The local architecture could bound credentials, preserve corrections, make uncertainty recordable, isolate known test identities, and plan the destruction of locally controlled ciphertext. It could not create consent, prove accuracy, give absent people a contestation path, govern provider retention, or reverse discovery effects. Those limits are part of the product record, not peripheral caveats.
+The local architecture could bound credentials, preserve corrections, make uncertainty recordable, isolate known test identities, and plan the destruction of locally controlled ciphertext. What it could not do — create consent, prove accuracy, give absent people a contestation path, govern provider retention, or reverse discovery effects — is exactly the inventory of §12, and those limits are part of the product record, not peripheral caveats.
 
 The research program opened by this case is therefore not “human or machine?” It is: **Which functions may be delegated, under what authority, with what disclosure, and which conclusions should remain the responsibility of a named human?**
 
 ## Postscript
 
-After this account reached its final form, the local workspace was inspected ahead of any release. The review campaign is complete, but the live procedure for retiring the workspace had not been implemented as an executable capability. Carrying out the teardown manually would have required improvising irreversible steps outside the implemented procedure, which the inspection was not authorized to do. Nothing was torn down. Local retirement is therefore not established, and the article’s statement that teardown remains scheduled but not yet performed is still accurate. Any later teardown would reach only locally controlled systems and keys; it could not prove provider-side deletion or reverse discovery effects.
+After this account reached its final form, the local workspace was inspected ahead of any release. The review campaign is complete, but the live procedure for retiring the workspace had not been implemented as an executable capability. Carrying out the teardown manually would have required improvising irreversible steps outside the implemented procedure, which the inspection was not authorized to do. Nothing was torn down. Local retirement is therefore not established, and the article’s statement that teardown remains scheduled but not yet performed is still accurate. Any later teardown would reach only locally controlled systems and keys, within the boundary stated in §10.
 
 This remains an account of the implemented and operated V1 system, including the later combined-card step, which produced contact triage but no identity candidates and no terminal identity decisions. The wider questions the case raises — about what makes a workflow genuinely human-governed once evidence has been mediated — belong to a separate successor research and design program that has advanced conceptually but remains unimplemented. Those questions belong to the next stage of the research rather than the conclusions of this one.
-

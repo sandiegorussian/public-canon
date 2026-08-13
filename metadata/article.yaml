@@ -3,8 +3,15 @@ title: "The Human-Review Band Is the Product"
 subtitle: "A purpose-bounded, human-adjudicated review of a decade-old contact archive."
 author: "Denis Lavrinenko"
 document_class: "Case study (practice-based, single-operator)"
-version: "v1.0"
+version: "v1.1"
 publication_status: "Published"
+revision_date: "2026-08-13"
+revision_notes: >
+  Editorial revision of v1.0: limits consolidated into one inventory (§12)
+  with pointers elsewhere; concrete narrative merged into §3 and moved
+  earlier; stacked qualifications reduced; function-allocation proposition
+  moved to §2; section count 17 → 14. No substantive claim, number,
+  calibration, or negative result changed.
 # Paths are site-relative; the project-site base is /public-canon/.
 site_base_url: "https://sandiegorussian.github.io/public-canon/"
 canonical_path: "case-studies/human-review-band/"
