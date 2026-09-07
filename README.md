@@ -2,11 +2,11 @@
 
 The public canon site of **Denis Lavrinenko** — a small, versioned set of case studies and documents on operations, software, and human-governed AI practice.
 
-**Status: published.** This repository is served as a GitHub Pages project site at `https://sandiegorussian.github.io/public-canon/`. There is no analytics, there are no cookies, and there are no trackers.
+**Status: published.** This repository is served as a GitHub Pages project site at `https://sandiegorussian.github.io/public-canon/`. There is no first-party analytics, there are no first-party cookies, and there are no trackers; the homepage’s Credly credential badge is the one third-party embed.
 
 ## What this is
 
-A calm, documentary, static website — plain HTML and one stylesheet, no build step, no first-party JavaScript, no cookies, no trackers, no third-party fonts. The single exception is the live Credly credential badge on the homepage, which loads Credly’s official embed script and badge iframe. The site presents a homepage, its first published case study, and a credentials section:
+A calm, documentary, static website — plain HTML and one stylesheet, no build step, no first-party JavaScript, cookies, or trackers, no third-party fonts. The single exception is the live Credly credential badge on the homepage, which loads Credly’s official embed script and badge iframe; that embed may make external requests to Credly and set its own cookies. The site presents a homepage, its first published case study, and a credentials section:
 
 - **The Human-Review Band Is the Product** — a practice-based case study of a purpose-bounded review of a decade-old contact archive.
 
