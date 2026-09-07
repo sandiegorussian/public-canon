@@ -6,7 +6,7 @@ The public canon site of **Denis Lavrinenko** — a small, versioned set of case
 
 ## What this is
 
-A calm, documentary, static website — plain HTML and one stylesheet, no build step, no JavaScript, no cookies, no trackers, no third-party fonts or scripts. The site presents a homepage and its first published case study:
+A calm, documentary, static website — plain HTML and one stylesheet, no build step, no first-party JavaScript, no cookies, no trackers, no third-party fonts. The single exception is the live Credly credential badge on the homepage, which loads Credly’s official embed script and badge iframe. The site presents a homepage, its first published case study, and a credentials section:
 
 - **The Human-Review Band Is the Product** — a practice-based case study of a purpose-bounded review of a decade-old contact archive.
 
@@ -15,7 +15,7 @@ Additional case studies and documents are listed on the homepage as clearly mark
 ## Architecture
 
 - Static HTML + CSS; a single inline-referenced SVG diagram; canonical Markdown source for the article.
-- Privacy-preserving by construction: no analytics, cookies, pixels, embeds, external fonts, or network requests. The only assets a browser loads are the local stylesheet and the local SVG.
+- Privacy-preserving by construction: no analytics, cookies, pixels, or external fonts of this site’s own. Besides the local stylesheet and images, the only external resources a browser loads are Credly’s embed script and badge iframe for the credential shown on the homepage.
 - Served as a plain static site on GitHub Pages, with a custom name-based domain possible later.
 
 ## Hosting model and paths
