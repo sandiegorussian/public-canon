@@ -184,55 +184,133 @@ figure.lead-art img {
 .canon-list .card-badge { margin: 0 0 0.8rem; }
 .canon-list .card-badge iframe { display: block; max-width: 100%; }
 
-/* ---------- credential genealogy (Credentials page) ----------
-   pathway (h2) > credential cards (h3, canon-list) > component courses (h4 + course-list).
-   Hierarchy is carried by headings and nested lists; the rule and marker are only visual. */
-.pathway-status {
+/* ---------- Credentials page: learning record with a pathway rail ----------
+   Scoped to .cred-* so the homepage and case study are untouched.
+   Semantics live in headings, lists and <dl>; the rail, nodes and plinth are decorative. */
+.cred-page { --rail-x: 0.45rem; --rail-gutter: 2.1rem; }
+.cred-pathway { position: relative; margin: 2.4rem 0 0; padding-left: var(--rail-gutter); }
+.cred-pathway::before {               /* the rail */
+  content: ""; position: absolute; left: var(--rail-x); top: 0.55rem; bottom: 1.6rem;
+  border-left: 2px solid var(--rule);
+}
+.cred-pathway::after {                /* open-ended tail: the pathway continues */
+  content: ""; position: absolute; left: var(--rail-x); bottom: 0; height: 1.6rem;
+  border-left: 2px dashed var(--rule);
+}
+.cred-pathway-head { position: relative; margin: 0 0 1.6rem; }
+.cred-pathway-head::before {          /* hollow node: in progress */
+  content: ""; position: absolute; left: calc(-1 * var(--rail-gutter) + var(--rail-x) - 0.35rem + 1px);
+  top: 0.55rem; width: 0.7rem; height: 0.7rem; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--accent);
+}
+.cred-pathway-head h2 { font-size: 1.45rem; line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
+.cred-pathway-meta {
   font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin: 0.2rem 0 0;
+  font-size: 0.85rem; color: var(--muted); margin: 0.35rem 0 0;
 }
-.pathway-status .status-tag { margin-left: 0.35rem; }
-.canon-list h3.item-title { line-height: 1.3; }
-.card-links {
-  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.85rem;
-  margin: 0.55rem 0 0;
-}
-.card-links a + a::before { content: " · "; color: var(--muted); text-decoration: none; display: inline-block; white-space: pre; }
-.course-heading {
-  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 1.2rem 0 0.3rem;
-}
-.canon-list .course-list { list-style: none; padding: 0 0 0 1rem; margin: 0; border-left: 2px solid var(--rule); }
-.canon-list .course-list li {
-  border: 0;
-  border-radius: 0;
-  padding: 0.45rem 0 0.45rem 1.1rem;
-  margin: 0;
-  position: relative;
-}
-.canon-list .course-list li::before {
-  content: "\2713" / "";
-  position: absolute;
-  left: 0;
-  top: 0.4rem;
-  color: var(--accent);
-  font-size: 0.9rem;
-}
-.canon-list .course-list .item-title { font-size: 0.98rem; margin: 0 0 0.2rem; }
+.cred-pathway-meta .status-tag { margin-left: 0.3rem; }
 
+.cred-records { list-style: none; margin: 0; padding: 0; }
+.cred-record {
+  position: relative;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);   /* evidence column sizes to the exact 150px badge + plinth padding */
+  column-gap: 1.4rem;
+  align-items: start;
+  padding: 0 0 2rem;
+  margin: 0 0 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+.cred-record:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0.6rem; }
+.cred-record::before {                /* filled node: completed */
+  content: ""; position: absolute; left: calc(-1 * var(--rail-gutter) + var(--rail-x) - 0.35rem + 1px);
+  top: 0.45rem; width: 0.7rem; height: 0.7rem; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--accent);
+}
+.cred-evidence {                      /* plinth: the live badge is evidence, not the layout driver */
+  background: var(--accent-soft);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 0.6rem;
+}
+.cred-evidence iframe { display: block; margin: 0 auto; }              /* never shrink: Credly content is a fixed 150×270 */
+.cred-noscript {
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.78rem; color: var(--muted); margin: 0.4rem 0 0; line-height: 1.4;
+}
+.cred-body { min-width: 0; }
+.cred-title { font-size: 1.2rem; line-height: 1.25; margin: 0.1rem 0 0.3rem; letter-spacing: -0.005em; }
+.cred-desc { font-size: 0.98rem; color: var(--muted); margin: 0 0 0.6rem; }
+.cred-status {
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.85rem; color: var(--ink); margin: 0 0 0.8rem;
+}
+.cred-status time { margin-left: 0.3rem; }
+.cred-prov {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 0.9rem; row-gap: 0.2rem;
+  margin: 0; padding: 0.6rem 0 0;
+  border-top: 1px solid var(--rule);
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.85rem;
+}
+.cred-prov dt { color: var(--muted); margin: 0; }
+.cred-prov dd { margin: 0; }
+.cred-prov dd, .cred-course-prov { display: flex; flex-wrap: wrap; column-gap: 0.9rem; row-gap: 0.15rem; }
+
+.cred-ledger-heading {
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.85rem; font-weight: 600; color: var(--ink);
+  margin: 1.5rem 0 0.2rem;
+}
+.cred-ledger { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.cred-ledger li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "title date" "prov prov";
+  column-gap: 1rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.cred-ledger .cred-course { grid-area: title; font-size: 0.98rem; font-weight: 600; margin: 0; line-height: 1.35; }
+.cred-ledger .cred-course-date {
+  grid-area: date; margin: 0; white-space: nowrap;
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.8rem; color: var(--muted); line-height: 1.7;
+}
+.cred-ledger .cred-course-prov {
+  grid-area: prov; margin: 0.15rem 0 0;
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 600px) {
+  .cred-page { --rail-gutter: 1.5rem; --rail-x: 0.3rem; }
+  .cred-record { grid-template-columns: 1fr; row-gap: 0.9rem; }
+  .cred-evidence { width: max-content; max-width: 100%; }
+  .cred-ledger li { grid-template-columns: 1fr; grid-template-areas: "title" "date" "prov"; }
+  .cred-ledger .cred-course-date { white-space: normal; line-height: 1.5; }
+}
+
+@media print {
+  .cred-evidence { display: none; }
+  .cred-record { grid-template-columns: 1fr; break-inside: avoid; border-bottom-color: #999; }
+  .cred-record:first-child { break-inside: auto; }
+  .cred-ledger li { break-inside: avoid; }
+  .cred-pathway::before, .cred-pathway::after, .cred-pathway-head::before, .cred-record::before { border-color: #000; }
+  .cred-record::before { background: #000; }
+  .cred-pathway-head::before { background: #fff; }
+  /* Print convention on this site hides link styling; on the Credentials page the target URL is the
+     verification itself, so expose it after the link text (from the real href, not authored content). */
+  .cred-prov a::after, .cred-course-prov a::after { content: " (" attr(href) ")"; font-size: 0.75em; color: #333; word-break: break-all; }
+}
+
+/* legacy Credentials-card rules kept for the shared card-badge print policy */
 @media print {
   figure.lead-art { break-inside: avoid; }
   figure.lead-art img { max-width: 100%; max-height: 11cm; width: auto; margin: 0 auto; }
   .canon-list .card-thumb, .canon-list .card-badge { display: none; }
-  .canon-list li { break-inside: avoid; }
-  .canon-list .course-list li { break-inside: auto; }
 }
 
 /* ---------- canon index ---------- */
