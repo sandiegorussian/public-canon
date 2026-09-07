@@ -9,7 +9,7 @@ The public canon site of **Denis Lavrinenko** — a small, versioned set of case
 A calm, documentary, static website — plain HTML and one stylesheet, no build step, no first-party JavaScript, cookies, or trackers, no third-party fonts. The single exception is the two live Credly credential badges on the Credentials page (`credentials/`), which load Credly’s official embed script once and one badge iframe per credential; those embeds may make external requests to Credly and set their own cookies. The homepage and the case-study page load no third-party resources. The site presents a homepage, its first published case study, and a credentials page:
 
 - **The Human-Review Band Is the Product** — a practice-based case study of a purpose-bounded review of a decade-old contact archive.
-- **Credentials** — verified course credentials grouped by learning pathway (Google AI: the five-course Google AI Essentials specialization and the AI Fundamentals course), each linking to its issuer’s verification page.
+- **Credentials** — two Google learning records on Coursera: the Google AI Professional Certificate (seven courses, in progress; AI Fundamentals completed) and the completed five-course Google AI Essentials specialization, each linking to its issuer’s verification pages.
 
 Additional case studies and documents are listed on the homepage as clearly marked *planned* placeholders; they are not yet written or published.
 

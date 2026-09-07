@@ -184,68 +184,80 @@ figure.lead-art img {
 .canon-list .card-badge { margin: 0 0 0.8rem; }
 .canon-list .card-badge iframe { display: block; max-width: 100%; }
 
-/* ---------- Credentials page: learning record with a pathway rail ----------
+/* ---------- Credentials page: two record grammars ----------
    Scoped to .cred-* so the homepage and case study are untouched.
-   Semantics live in headings, lists and <dl>; the rail, nodes and plinth are decorative. */
-.cred-page { --rail-x: 0.45rem; --rail-gutter: 2.1rem; }
-.cred-pathway { position: relative; margin: 2.4rem 0 0; padding-left: var(--rail-gutter); }
-.cred-pathway::before {               /* the rail */
-  content: ""; position: absolute; left: var(--rail-x); top: 0.55rem; bottom: 1.6rem;
+   A program record (in progress) carries an ordered curriculum on a spine of stations;
+   a completed record carries evidence beside a completion ledger. Semantics live in
+   headings, <ol>/<ul>/<dl> and real text ("Course 1 of 7"); spine, stations and plinth are decorative. */
+.cred-page { --spine-x: 0.45rem; --spine-gutter: 2.1rem; }
+
+/* record header (shared by both record types) */
+.cred-record-head { margin: 2.4rem 0 1.2rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--rule); }
+.cred-record-head h2 { font-size: 1.45rem; line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
+.cred-record-kind { font-size: 0.98rem; color: var(--muted); margin: 0.3rem 0 0; }
+.cred-record-state {
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.85rem; color: var(--ink); margin: 0.55rem 0 0;
+}
+.cred-record-state time { margin-left: 0.3rem; }
+
+/* program record: curriculum spine */
+.cred-curriculum { list-style: none; margin: 0; padding: 0 0 0 var(--spine-gutter); position: relative; }
+.cred-curriculum::before {            /* the spine */
+  content: ""; position: absolute; left: var(--spine-x); top: 0.8rem; bottom: 0.8rem;
   border-left: 2px solid var(--rule);
 }
-.cred-pathway::after {                /* open-ended tail: the pathway continues */
-  content: ""; position: absolute; left: var(--rail-x); bottom: 0; height: 1.6rem;
-  border-left: 2px dashed var(--rule);
-}
-.cred-pathway-head { position: relative; margin: 0 0 1.6rem; }
-.cred-pathway-head::before {          /* hollow node: in progress */
-  content: ""; position: absolute; left: calc(-1 * var(--rail-gutter) + var(--rail-x) - 0.35rem + 1px);
-  top: 0.55rem; width: 0.7rem; height: 0.7rem; border-radius: 50%;
-  background: var(--bg); border: 2px solid var(--accent);
-}
-.cred-pathway-head h2 { font-size: 1.45rem; line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
-.cred-pathway-meta {
-  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.85rem; color: var(--muted); margin: 0.35rem 0 0;
-}
-.cred-pathway-meta .status-tag { margin-left: 0.3rem; }
-
-.cred-records { list-style: none; margin: 0; padding: 0; }
-.cred-record {
+.cred-station {
   position: relative;
   display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);   /* evidence column sizes to the exact 150px badge + plinth padding */
+  grid-template-columns: minmax(0, 1fr) max-content;
   column-gap: 1.4rem;
   align-items: start;
-  padding: 0 0 2rem;
-  margin: 0 0 2rem;
+  padding: 0.7rem 0 0.75rem;
   border-bottom: 1px solid var(--rule);
 }
-.cred-record:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0.6rem; }
-.cred-record::before {                /* filled node: completed */
-  content: ""; position: absolute; left: calc(-1 * var(--rail-gutter) + var(--rail-x) - 0.35rem + 1px);
-  top: 0.45rem; width: 0.7rem; height: 0.7rem; border-radius: 50%;
-  background: var(--accent); border: 2px solid var(--accent);
+.cred-station:last-child { border-bottom: 0; }
+.cred-station::before {               /* hollow station: not yet complete */
+  content: ""; position: absolute; left: calc(-1 * var(--spine-gutter) + var(--spine-x) - 0.35rem + 1px);
+  top: 1.05rem; width: 0.7rem; height: 0.7rem; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--rule);
 }
-.cred-evidence {                      /* plinth: the live badge is evidence, not the layout driver */
+.cred-station.is-complete::before { background: var(--accent); border-color: var(--accent); }
+.cred-station.is-complete {           /* completed station carries its evidence: plinth left, record right */
+  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-areas: "evidence main";
+  padding-bottom: 1.3rem;
+}
+.cred-station.is-complete .cred-station-main { grid-area: main; }
+.cred-station.is-complete .cred-evidence { grid-area: evidence; }
+.cred-station-main { min-width: 0; }
+.cred-course-pos {
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.78rem; color: var(--muted); margin: 0; line-height: 1.4;
+}
+.cred-course-title { font-size: 1.02rem; font-weight: 600; line-height: 1.3; margin: 0.05rem 0 0.15rem; }
+.cred-station.is-complete .cred-course-title { font-size: 1.2rem; letter-spacing: -0.005em; }
+.cred-course-state {
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.85rem; color: var(--muted); margin: 0;
+}
+.cred-station.is-complete .cred-course-state { color: var(--ink); margin: 0.2rem 0 0.8rem; }
+.cred-course-state time { margin-left: 0.3rem; }
+
+/* evidence plinth: the live badge is an artifact, never the layout driver */
+.cred-evidence {
   background: var(--accent-soft);
   border: 1px solid var(--rule);
   border-radius: 6px;
   padding: 0.6rem;
 }
-.cred-evidence iframe { display: block; margin: 0 auto; }              /* never shrink: Credly content is a fixed 150×270 */
+.cred-evidence iframe { display: block; margin: 0 auto; }   /* never shrink: Credly content is a fixed 150×270 */
 .cred-noscript {
   font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.78rem; color: var(--muted); margin: 0.4rem 0 0; line-height: 1.4;
+  font-size: 0.78rem; color: var(--muted); margin: 0.4rem 0 0; line-height: 1.4; max-width: 150px;
 }
-.cred-body { min-width: 0; }
-.cred-title { font-size: 1.2rem; line-height: 1.25; margin: 0.1rem 0 0.3rem; letter-spacing: -0.005em; }
-.cred-desc { font-size: 0.98rem; color: var(--muted); margin: 0 0 0.6rem; }
-.cred-status {
-  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.85rem; color: var(--ink); margin: 0 0 0.8rem;
-}
-.cred-status time { margin-left: 0.3rem; }
+
+/* provenance: issuer as term, links as definition */
 .cred-prov {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr);
@@ -255,14 +267,24 @@ figure.lead-art img {
   font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
   font-size: 0.85rem;
 }
+.cred-prov.cred-prov-top { border-top: 0; padding-top: 0.1rem; }
 .cred-prov dt { color: var(--muted); margin: 0; }
 .cred-prov dd { margin: 0; }
 .cred-prov dd, .cred-course-prov { display: flex; flex-wrap: wrap; column-gap: 0.9rem; row-gap: 0.15rem; }
 
+/* completed record: evidence beside the ledger */
+.cred-record {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 1.4rem;
+  align-items: start;
+  padding-bottom: 0.6rem;
+}
+.cred-body { min-width: 0; }
 .cred-ledger-heading {
   font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
   font-size: 0.85rem; font-weight: 600; color: var(--ink);
-  margin: 1.5rem 0 0.2rem;
+  margin: 1.2rem 0 0.2rem;
 }
 .cred-ledger { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
 .cred-ledger li {
@@ -286,8 +308,9 @@ figure.lead-art img {
 }
 
 @media (max-width: 600px) {
-  .cred-page { --rail-gutter: 1.5rem; --rail-x: 0.3rem; }
-  .cred-record { grid-template-columns: 1fr; row-gap: 0.9rem; }
+  .cred-page { --spine-gutter: 1.5rem; --spine-x: 0.3rem; }
+  .cred-station, .cred-record { grid-template-columns: 1fr; row-gap: 0.9rem; }
+  .cred-station.is-complete { grid-template-columns: 1fr; grid-template-areas: "main" "evidence"; }
   .cred-evidence { width: max-content; max-width: 100%; }
   .cred-ledger li { grid-template-columns: 1fr; grid-template-areas: "title" "date" "prov"; }
   .cred-ledger .cred-course-date { white-space: normal; line-height: 1.5; }
@@ -295,12 +318,15 @@ figure.lead-art img {
 
 @media print {
   .cred-evidence { display: none; }
-  .cred-record { grid-template-columns: 1fr; break-inside: avoid; border-bottom-color: #999; }
-  .cred-record:first-child { break-inside: auto; }
-  .cred-ledger li { break-inside: avoid; }
-  .cred-pathway::before, .cred-pathway::after, .cred-pathway-head::before, .cred-record::before { border-color: #000; }
-  .cred-record::before { background: #000; }
-  .cred-pathway-head::before { background: #fff; }
+  .cred-station, .cred-record { grid-template-columns: 1fr; }
+  .cred-station.is-complete { grid-template-columns: 1fr; grid-template-areas: "main"; }
+  .cred-prov dd, .cred-course-prov { display: block; }
+  .cred-prov dd a, .cred-course-prov a { display: block; }
+  .cred-station, .cred-ledger li, .cred-record-head { break-inside: avoid; }
+  .cred-record-head { break-after: avoid; }
+  .cred-curriculum::before, .cred-station::before { border-color: #000; }
+  .cred-station::before { background: #fff; }
+  .cred-station.is-complete::before { background: #000; }
   /* Print convention on this site hides link styling; on the Credentials page the target URL is the
      verification itself, so expose it after the link text (from the real href, not authored content). */
   .cred-prov a::after, .cred-course-prov a::after { content: " (" attr(href) ")"; font-size: 0.75em; color: #333; word-break: break-all; }
