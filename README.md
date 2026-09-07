@@ -2,11 +2,11 @@
 
 The public canon site of **Denis Lavrinenko** — a small, versioned set of case studies and documents on operations, software, and human-governed AI practice.
 
-**Status: published.** This repository is served as a GitHub Pages project site at `https://sandiegorussian.github.io/public-canon/`. There is no first-party analytics, there are no first-party cookies, and there are no trackers; the homepage’s Credly credential badge is the one third-party embed.
+**Status: published.** This repository is served as a GitHub Pages project site at `https://sandiegorussian.github.io/public-canon/`. There is no first-party analytics, there are no first-party cookies, and there are no trackers; the homepage’s Credly credential badges are the only third-party embeds.
 
 ## What this is
 
-A calm, documentary, static website — plain HTML and one stylesheet, no build step, no first-party JavaScript, cookies, or trackers, no third-party fonts. The single exception is the live Credly credential badge on the homepage, which loads Credly’s official embed script and badge iframe; that embed may make external requests to Credly and set its own cookies. The site presents a homepage, its first published case study, and a credentials section:
+A calm, documentary, static website — plain HTML and one stylesheet, no build step, no first-party JavaScript, cookies, or trackers, no third-party fonts. The single exception is the live Credly credential badges on the homepage, which load Credly’s official embed script once and one badge iframe per credential; those embeds may make external requests to Credly and set their own cookies. The site presents a homepage, its first published case study, and a credentials section:
 
 - **The Human-Review Band Is the Product** — a practice-based case study of a purpose-bounded review of a decade-old contact archive.
 
@@ -15,7 +15,7 @@ Additional case studies and documents are listed on the homepage as clearly mark
 ## Architecture
 
 - Static HTML + CSS; a single inline-referenced SVG diagram; canonical Markdown source for the article.
-- Privacy-preserving by construction: no analytics, cookies, pixels, or external fonts of this site’s own. Besides the local stylesheet and images, the only external resources a browser loads are Credly’s embed script and badge iframe for the credential shown on the homepage.
+- Privacy-preserving by construction: no analytics, cookies, pixels, or external fonts of this site’s own. Besides the local stylesheet and images, the only external resources a browser loads are Credly’s embed script and the badge iframes for the credentials shown on the homepage.
 - Served as a plain static site on GitHub Pages, with a custom name-based domain possible later.
 
 ## Hosting model and paths
