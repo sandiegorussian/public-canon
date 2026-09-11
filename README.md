@@ -2,21 +2,21 @@
 
 The public canon site of **Denis Lavrinenko** — a small, versioned set of case studies and documents on operations, software, and human-governed AI practice.
 
-**Status: published.** This repository is served as a GitHub Pages project site at `https://sandiegorussian.github.io/public-canon/`. There is no first-party analytics, there are no first-party cookies, and there are no trackers; the three Credly credential badges on the Credentials page are the only third-party embeds, and no other page loads them.
+**Status: published.** This repository is served as a GitHub Pages project site at `https://sandiegorussian.github.io/public-canon/`. There is no first-party analytics, there are no first-party cookies, and there are no trackers; the four Credly credential badges on the Credentials page are the only third-party embeds, and no other page loads them.
 
 ## What this is
 
-A calm, documentary, static website — plain HTML and one stylesheet, no build step, no first-party JavaScript, cookies, or trackers, no third-party fonts. The single exception is the three live Credly credential badges on the Credentials page (`credentials/`), which load Credly’s official embed script once and one badge iframe per credential; those embeds may make external requests to Credly and set their own cookies. The homepage and the case-study page load no third-party resources. The site presents a homepage, its first published case study, and a credentials page:
+A calm, documentary, static website — plain HTML and one stylesheet, no build step, no first-party JavaScript, cookies, or trackers, no third-party fonts. The single exception is the four live Credly credential badges on the Credentials page (`credentials/`), which load Credly’s official embed script once and one badge iframe per credential; those embeds may make external requests to Credly and set their own cookies. The homepage and the case-study page load no third-party resources. The site presents a homepage, its first published case study, and a credentials page:
 
 - **The Human-Review Band Is the Product** — a practice-based case study of a purpose-bounded review of a decade-old contact archive.
-- **Credentials** — two Google learning records on Coursera: the Google AI Professional Certificate (seven courses, in progress; two completed) and the completed five-course Google AI Essentials specialization, each linking to its issuer’s verification pages.
+- **Credentials** — two Google learning records on Coursera: the Google AI Professional Certificate (seven courses, in progress; three completed) and the completed five-course Google AI Essentials specialization, each linking to its issuer’s verification pages.
 
 Additional case studies and documents are listed on the homepage as clearly marked *planned* placeholders; they are not yet written or published.
 
 ## Architecture
 
 - Static HTML + CSS; a single inline-referenced SVG diagram; canonical Markdown source for the article.
-- Privacy-preserving by construction: no analytics, cookies, pixels, or external fonts of this site’s own. Besides the local stylesheet and images, the only external resources a browser loads are Credly’s embed script and the three badge iframes on the Credentials page; the homepage and the case-study page load only local assets.
+- Privacy-preserving by construction: no analytics, cookies, pixels, or external fonts of this site’s own. Besides the local stylesheet and images, the only external resources a browser loads are Credly’s embed script and the four badge iframes on the Credentials page; the homepage and the case-study page load only local assets.
 - Served as a plain static site on GitHub Pages, with a custom name-based domain possible later.
 
 ## Hosting model and paths
